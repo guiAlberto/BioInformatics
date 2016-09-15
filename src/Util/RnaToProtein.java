@@ -25,15 +25,14 @@ public class RnaToProtein {
 	 * @return
 	 * @throws InvalidAminoAcidException
 	 */
-	public static Protein covert(final Rna rna) throws InvalidAminoAcidException {
+	public static Protein covert(Rna rna) throws InvalidAminoAcidException {
 		List<Codom> codoms = new ArrayList<Codom>();
-		List<NitrogenousBase> nitrogenousBases = rna.getNitrogenousBases();
 		int i = 0;
-		while (i < nitrogenousBases.size()) {
+		while (i < rna.size()) {
 			NitrogenousBase[] crack = new NitrogenousBase[3];
-			crack[0] = nitrogenousBases.get(i++);
-			crack[1] = nitrogenousBases.get(i++);
-			crack[2] = nitrogenousBases.get(i++);
+			crack[0] = rna.getNitrogenousBaseAt(i++);
+			crack[1] = rna.getNitrogenousBaseAt(i++);
+			crack[2] = rna.getNitrogenousBaseAt(i++);
 			Codom codom = new Codom(crack);
 			codoms.add(codom);
 		}

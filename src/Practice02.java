@@ -1,0 +1,15 @@
+import Entity.Protein;
+import Util.Comparator;
+
+public class Practice02 {
+
+	public static void main(String[] args) {
+		Protein humanMioglobin = new Protein(
+				"MGLSDGEWQLVLNVWGKVEADIPGHGQEVLIRLFKGHPETLEKFDKFKHLKSEDEMKASEDLKKHGATVLTALGGILKKKGHHEAEIKPLAQSHATKHKIPVKYLEFISECIIQVLQSKHPGDFGADAQGAMNKALELFRKDMASNYKELGFQG");
+		Protein mouseMioglobin = new Protein(
+				"MGLSDGEWQLVLNVWGKVEADLAGHGQEVLIGLFKTHPETLDKFDKFKNLKSEEDMKGSEDLKKHGCTVLTALGTILKKKGQHAAEIQPLAQSHATKHKIPVKYLEFISEIIIEVLKKRHSGDFGADAQGAMSKALELFRNDIAAKYKELGFQG");
+		Double result = Comparator.compare(humanMioglobin, mouseMioglobin);
+		System.out.println("Porcentagem: " + result * 100 + "%");
+	}
+
+}

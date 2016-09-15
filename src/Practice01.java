@@ -5,9 +5,8 @@ import Entity.Rna;
 import Exception.InvalidAminoAcidException;
 import Util.RnaToProtein;
 
-public class Main {
+public class Practice01 {
 
-	// TODO generate javadocs
 	public static void main(String[] args) throws InvalidAminoAcidException {
 		String string;
 		Scanner scanner = new Scanner(System.in);

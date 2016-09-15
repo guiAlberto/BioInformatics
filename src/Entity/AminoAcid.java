@@ -3,10 +3,7 @@ package Entity;
 import Exception.InvalidAminoAcidException;
 
 /**
- * A class that handle the information of an amino acid by an identification
- * character abbreviation.
- * 
- * The special "stop" amino acid is here used with the "X" character.
+ * A class that handle one amino acid.
  * 
  * @author guilherme
  *
@@ -17,17 +14,16 @@ public class AminoAcid {
 
 	/**
 	 * @param amonoAcid
-	 *            Case sensitive character that represent the amino acid.
-	 *            Provide the special character 'X' for "stop" amino acid.
+	 *            Character representation of an amino acid
 	 * @throws InvalidAminoAcidException
 	 */
 	public AminoAcid(Character amonoAcid) throws InvalidAminoAcidException {
 		super();
-		if (!amonoAcid.equals('X') && !amonoAcid.equals('F') && !amonoAcid.equals('L') && !amonoAcid.equals('S')
-				&& !amonoAcid.equals('Y') && !amonoAcid.equals('C') && !amonoAcid.equals('W') && !amonoAcid.equals('P')
-				&& !amonoAcid.equals('H') && !amonoAcid.equals('Q') && !amonoAcid.equals('R') && !amonoAcid.equals('I')
-				&& !amonoAcid.equals('M') && !amonoAcid.equals('T') && !amonoAcid.equals('N') && !amonoAcid.equals('K')
-				&& !amonoAcid.equals('V') && !amonoAcid.equals('A') && !amonoAcid.equals('D') && !amonoAcid.equals('E')
+		if (!amonoAcid.equals('F') && !amonoAcid.equals('L') && !amonoAcid.equals('S') && !amonoAcid.equals('Y')
+				&& !amonoAcid.equals('C') && !amonoAcid.equals('W') && !amonoAcid.equals('P') && !amonoAcid.equals('H')
+				&& !amonoAcid.equals('Q') && !amonoAcid.equals('R') && !amonoAcid.equals('I') && !amonoAcid.equals('M')
+				&& !amonoAcid.equals('T') && !amonoAcid.equals('N') && !amonoAcid.equals('K') && !amonoAcid.equals('V')
+				&& !amonoAcid.equals('A') && !amonoAcid.equals('D') && !amonoAcid.equals('E')
 				&& !amonoAcid.equals('G')) {
 			throw new InvalidAminoAcidException();
 		}

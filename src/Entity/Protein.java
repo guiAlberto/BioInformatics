@@ -16,40 +16,39 @@ public class Protein {
 
 	private List<AminoAcid> aminoAcids;
 
-	/**
-	 * @param aminoAcids
-	 *            List of amino acid. It must have the special "stop" amino acid
-	 *            at the last position, and only there.
-	 * @throws InvalidProteinException
-	 */
 	public Protein(List<AminoAcid> aminoAcids) throws InvalidProteinException {
 		super();
-		AminoAcid stopAminoacid = new AminoAcid('X');
-		AminoAcid lastAminoacid = aminoAcids.get(aminoAcids.size() - 1);
-		List<AminoAcid> proteinWithoutLastAminoacid = new ArrayList<>();
-		for (int i = 0; i < aminoAcids.size() - 1; i++) {
-			proteinWithoutLastAminoacid.add(aminoAcids.get(i));
-		}
+		this.aminoAcids = aminoAcids;
+	}
 
-		if (!aminoAcids.contains(stopAminoacid)) {
-			throw new InvalidProteinException("Protein does not contains any stop amino acid");
-		}
-
-		if (!lastAminoacid.equals(stopAminoacid)) {
-			throw new InvalidProteinException("Protein last amino acid is not a stop amino acid");
-		}
-
-		if (proteinWithoutLastAminoacid.contains(stopAminoacid)) {
-			throw new InvalidProteinException(
-					"Some of the amino acids is a stop amino acid and it is not the last one");
+	public Protein(String string) {
+		List<AminoAcid> aminoAcids = new ArrayList<>();
+		for (int i = 0; i < string.length(); i++) {
+			aminoAcids.add(new AminoAcid(string.charAt(i)));
 		}
 		this.aminoAcids = aminoAcids;
+	}
+
+	/**
+	 * @return Number of amino acids that compose the protein
+	 */
+	public int size() {
+		return this.aminoAcids.size();
+	}
+
+	/**
+	 * @param i
+	 *            Index of the amino acid in the protein
+	 * @return Amino acid at index position
+	 */
+	public AminoAcid getAminoacid(int i) {
+		return this.aminoAcids.get(i);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-		for (int i = 0; i < this.aminoAcids.size() - 1; i++) {
+		for (int i = 0; i < this.aminoAcids.size(); i++) {
 			stringBuilder.append(this.aminoAcids.get(i).toString());
 		}
 		return stringBuilder.toString();

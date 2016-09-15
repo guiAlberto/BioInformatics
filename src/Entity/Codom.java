@@ -115,13 +115,13 @@ public class Codom {
 		case "GAC":
 			return new AminoAcid('D');
 		case "UAA":
-			return new AminoAcid('X');
+			return null;
 		case "CAA":
 			return new AminoAcid('Q');
 		case "GAA":
 			return new AminoAcid('E');
 		case "UAG":
-			return new AminoAcid('X');
+			return null;
 		case "CAG":
 			return new AminoAcid('Q');
 		case "AAG":
@@ -145,7 +145,7 @@ public class Codom {
 		case "GGC":
 			return new AminoAcid('G');
 		case "UGA":
-			return new AminoAcid('X');
+			return null;
 		case "CGA":
 			return new AminoAcid('R');
 		case "AGA":

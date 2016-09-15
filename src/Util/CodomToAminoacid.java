@@ -37,7 +37,11 @@ public class CodomToAminoacid {
 	public static List<AminoAcid> convert(List<Codom> codoms) throws InvalidAminoAcidException {
 		List<AminoAcid> aminoacids = new ArrayList<>();
 		for (Codom codom : codoms) {
-			aminoacids.add(CodomToAminoacid.convert(codom));
+			AminoAcid aminoAcid = CodomToAminoacid.convert(codom);
+			if(aminoAcid == null){
+				break;
+			}
+			aminoacids.add(aminoAcid);
 		}
 		return aminoacids;
 	}

@@ -22,7 +22,6 @@ public class Rna {
 		this.nitrogenousBases = nitrogenousBases;
 	}
 
-	// TODO find a way to not rewrite the constructor code
 	/**
 	 * @param string
 	 *            list of the nitrogenous bases that compose the Rna
@@ -40,10 +39,19 @@ public class Rna {
 	}
 
 	/**
-	 * @return the list of the nitrogenous bases that compose the Rna
+	 * @return Number of nitrogenous bases that compose the RNA
 	 */
-	public List<NitrogenousBase> getNitrogenousBases() {
-		return nitrogenousBases;
+	public int size() {
+		return this.nitrogenousBases.size();
+	}
+
+	/**
+	 * @param i
+	 *            Index of nitrogenous base in the RNA
+	 * @return Nitrogenous Base at index position
+	 */
+	public NitrogenousBase getNitrogenousBaseAt(int i) {
+		return this.nitrogenousBases.get(i);
 	}
 
 	@Override

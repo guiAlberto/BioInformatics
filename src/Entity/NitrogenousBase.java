@@ -4,8 +4,8 @@ import Exception.InvalidNitrogenousBaseException;
 
 /**
  * A class that handle the information of an nitrogenous base by an
- * identification character abbreviation: adenine ('A'), uracil ('U'), guanine
- * ('G'), thymine ('T'), and cytosine ('C').
+ * identification character abbreviation: adenine ("A"), uracil ("U"), guanine
+ * ("G"), thymine ("T"), and cytosine ("C").
  * 
  * @author guilherme
  *
